@@ -16,6 +16,8 @@ Client.init({
         allowNull: false,
         primaryKey : true
     }
+},{
+    sequelize
 });
 
 exports.Client = Client; 

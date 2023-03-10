@@ -20,6 +20,8 @@ Produit.init({
         type : DataTypes.STRING , 
         allowNull : false
     },
+},{
+    sequelize
 });
 
 exports.Produit = Produit;

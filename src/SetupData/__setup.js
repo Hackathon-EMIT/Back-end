@@ -2,6 +2,9 @@ const setupData = require("#Utils/setupData");
 
 const {
     //Model
+    Achat , 
+    Client,
+    
     sequelize
 } = require("#Model");
 

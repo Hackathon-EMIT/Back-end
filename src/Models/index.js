@@ -5,7 +5,10 @@ const {PointSale} = require('./PointSale');
 const {Produit} = require('./Produit');
 const {Promo} = require('./Promo');
 
-
+Produit.hasOne(Promo, {
+    foreignKey : 'code_prod'
+})
+Promo.belongsTo(Produit)
 
 
 

@@ -1,3 +1,7 @@
+const sequelize = require("./__sequelize");
+const Fournisor = require("./Fournisor");
+const Notif = require("./Notif");
+const Facture = require("./Facture");
 const Client = require("./Client");
 const Produit = require("./Produit");
 const Achat = require('./Achat');
@@ -6,12 +10,18 @@ const PointSale = require('./PointSale');
 const Promo = require('./Promo');
 
 
+exports.sequelize = sequelize;
+exports.Facture = Facture;
+exports.Fournisor = Fournisor;
+exports.Notif = Notif;
 exports.Client = Client;
 exports.Produit = Produit;
 exports.Achat = Achat;
 exports.Gerant = Gerant;
 exports.PointSale = PointSale; 
 exports.Promo = Promo;
+
+
 
 
 

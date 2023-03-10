@@ -2,7 +2,7 @@ const sequelize = require('./__sequelize');
 const {DataTypes,Model} = require("sequelize");
 
 class Fournisor extends Model {};
-fournisor.init({
+Fournisor.init({
     id_four : {
         type : DataTypes.STRING,
         primaryKey:true,

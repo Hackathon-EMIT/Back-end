@@ -1,8 +1,8 @@
 const {DataTypes , Model} = require('sequelize');
 const sequelize = require('./__sequelize');
 
-class Client extends Model{};
-Client.init({
+class Gerant extends Model{};
+Gerant.init({
     g_id : {
         type : DataTypes.UUID,
         defaultValue : DataTypes.UUIDV4 ,
@@ -21,4 +21,4 @@ Client.init({
     sequelize
 });
 
-exports.Client = Client; 
+exports.Gerant = Gerant; 

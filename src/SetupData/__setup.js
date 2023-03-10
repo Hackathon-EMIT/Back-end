@@ -23,7 +23,7 @@ const {
         alter:true,
         force:true
     })
-    
+
     await setupData({ uri:__dirname+"/Achat.json", model: Achat });
     await setupData({ uri:__dirname+"/Client.json", model: Client });
     await setupData({ uri:__dirname+"/Facture.json", model: Facture });
@@ -33,7 +33,6 @@ const {
     await setupData({ uri:__dirname+"/PointSale.json", model: PointSale });
     await setupData({ uri:__dirname+"/Produit.json", model: Produit });
     await setupData({ uri:__dirname+"/Promo.json", model: Promo });
-    await setupData({ uri:__dirname+"/Stock.json", model: Stock });
 
 
     //await relationEntreModel(

@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "imports": {
+    "#ErrType": "./src/ErrorType/index.js",
+    "#Model": "./src/Models/index.js",
+    "#Feat": "./src/Features/index.js",
+    "#Utils/*": "./src/Utils/*.js",
+    "#Utils/test-tools/*": "./src/Utils/test-tools/*.js",
+    "#Utils/routes/*": "./src/Utils/routes/*.js"
+  },
   "scripts": {
     "test": "npm run test",
     "dev": "nodemon ./src/index.js",

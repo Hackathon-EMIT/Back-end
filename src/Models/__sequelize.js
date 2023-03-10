@@ -6,8 +6,4 @@ const sequelize = new Sequelize({
     logging:false
 });
 
-// (async()=>{
-    
-// })();
-
 module.exports = sequelize;

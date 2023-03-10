@@ -1,4 +1,5 @@
 const setupData = require("#Utils/setupData");
+
 const {
     //Model
     sequelize
@@ -18,5 +19,4 @@ const {
        // id,
         //id
     //);
-
 })();

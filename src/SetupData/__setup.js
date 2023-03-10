@@ -1,11 +1,7 @@
 const setupData = require("#Utils/setupData");
-const relationGerantNotif = require("./GerantNotif");
-<<<<<<< HEAD
 const relationProduitPromo = require('./ProduitPromo');
 
-=======
-const relationProduitFacture = require("./ProduitFacture");
->>>>>>> 643b7bed42e163b2970442cdb2b4719552c36a48
+
 
 const {
     //Model

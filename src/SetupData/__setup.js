@@ -1,5 +1,6 @@
 const setupData = require("#Utils/setupData");
 const relationGerantNotif = require("./GerantNotif");
+const relationProduitFacture = require("./ProduitFacture");
 
 const {
     //Model

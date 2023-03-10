@@ -33,13 +33,14 @@ const {
     await setupData({ uri:__dirname+"/Promo.json", model: Promo });
 
 
+    await relationProduitFacture(
+        "53e9a54c-df5a-470a-bf8f-0d357457a474",
+        "53e9a54c-df5a-470a-bf8f-0d357457a984"
+    );
+
     //await relationEntreModel(
        // id,
         //id
     //);
-    await relationGerantNotif(
-        "53e9a54c-df5a-470a-bf8f-0d357457a984",
-        "53ac94bd-0f3b-448f-9f7a-01904da85054"
-    );
-    
+
 })();

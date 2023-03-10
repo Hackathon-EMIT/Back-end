@@ -1,8 +1,8 @@
 const setupData = require("#Utils/setupData");
+const relationProduitFacture = require('./ProduitFacture');
 
 const {
-    //Model
-    Achat , 
+    //Model 
     Client,
     Facture,
     Fournisor , 
@@ -11,7 +11,6 @@ const {
     PointSale , 
     Produit , 
     Promo , 
-    Stock,
     sequelize
 } = require("#Model");
 
@@ -24,7 +23,6 @@ const {
         force:true
     })
 
-    await setupData({ uri:__dirname+"/Achat.json", model: Achat });
     await setupData({ uri:__dirname+"/Client.json", model: Client });
     await setupData({ uri:__dirname+"/Facture.json", model: Facture });
     await setupData({ uri:__dirname+"/Fournisor.json", model: Fournisor });
@@ -35,8 +33,8 @@ const {
     await setupData({ uri:__dirname+"/Promo.json", model: Promo });
 
 
-    //await relationEntreModel(
-       // id,
-        //id
-    //);
+    await relationProduitFacture(
+        "53e9a54c-df5a-470a-bf8f-0d357457a474",
+        "53e9a54c-df5a-470a-bf8f-0d357457a984"
+    );
 })();

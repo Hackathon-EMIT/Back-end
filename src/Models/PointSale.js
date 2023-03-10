@@ -3,15 +3,18 @@ const sequelize = require('./__sequelize');
 
 class PointSale extends Model{};
 PointSale.init({
+    ps_id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true
+    },
     coord_long: {
         type : DataTypes.STRING,
         allowNull : false,
-        primaryKey : true
     },
     coord_lat: {
         type : DataTypes.STRING,
         allowNull : false,
-        primaryKey:true
     },
     region : {
         type : DataTypes.STRING,

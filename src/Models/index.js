@@ -4,8 +4,13 @@ const Achat = require('./Achat');
 const Gerant = require('./Gerant');
 const PointSale = require('./PointSale');
 const Promo = require('./Promo');
+const Stock = require("./Stock");
+const sequelize = require("./__sequelize");
 
+Produit.belongsToMany(PointSale, { through: Stock });
+PointSale.belongsToMany(Produit, { through: Stock })
 
+exports.sequelize = sequelize;
 exports.Client = Client;
 exports.Produit = Produit;
 exports.Achat = Achat;

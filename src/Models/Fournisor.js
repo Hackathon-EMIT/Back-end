@@ -3,7 +3,7 @@ const {DataTypes,Model} = require("sequelize");
 
 class Fournisor extends Model {};
 fournisor.init({
-    four_id : {
+    id_four : {
         type : DataTypes.STRING,
         primaryKey:true,
         defaultValue:DataTypes.UUIDV4,
@@ -21,7 +21,7 @@ fournisor.init({
         type:DataTypes.STRING(10),
     },
 
-    four_email:{
+    email_four:{
         type:DataTypes.STRING,
     },
 

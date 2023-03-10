@@ -1,8 +1,8 @@
 const setupData = require("#Utils/setupData");
-const relationProduitFacture = require('./ProduitFacture');
+const relationGerantNotif = require("./GerantNotif");
 
 const {
-    //Model 
+    //Model
     Client,
     Facture,
     Fournisor , 
@@ -37,4 +37,10 @@ const {
         "53e9a54c-df5a-470a-bf8f-0d357457a474",
         "53e9a54c-df5a-470a-bf8f-0d357457a984"
     );
+
+    //await relationEntreModel(
+       // id,
+        //id
+    //);
+
 })();

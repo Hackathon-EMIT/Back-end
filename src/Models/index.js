@@ -1,5 +1,4 @@
 const sequelize = require("./__sequelize");
-const Fournisor = require("./Fournisor");
 const Notif = require("./Notif");
 const Facture = require("./Facture");
 const Client = require("./Client");
@@ -10,7 +9,6 @@ const PointSale = require('./PointSale');
 const Fournisor = require("./Fournisor");
 const Promo = require('./Promo');
 const Stock = require("./Stock");
-const sequelize = require("./__sequelize");
 
 Produit.hasOne(Fournisor);
 Fournisor.hasMany(Produit);

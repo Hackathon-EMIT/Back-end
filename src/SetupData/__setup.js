@@ -1,4 +1,5 @@
 const setupData = require("#Utils/setupData");
+const relationGerantNotif = require("./GerantNotif");
 
 const {
     //Model
@@ -10,7 +11,6 @@ const {
     PointSale , 
     Produit , 
     Promo , 
-    Stock,
     sequelize
 } = require("#Model");
 
@@ -37,4 +37,9 @@ const {
        // id,
         //id
     //);
+    await relationGerantNotif(
+        "53e9a54c-df5a-470a-bf8f-0d357457a984",
+        "53ac94bd-0f3b-448f-9f7a-01904da85054"
+    );
+    
 })();

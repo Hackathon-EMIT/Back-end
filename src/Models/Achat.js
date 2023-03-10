@@ -15,4 +15,4 @@ Achat.init({
     sequelize
 });
 
-exports.Achat = Achat; 
+module.exports = Achat; 

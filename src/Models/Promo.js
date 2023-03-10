@@ -19,4 +19,4 @@ Promo.init({
     sequelize
 });
 
-exports.Promo = Promo; 
+module.exports = Promo; 

@@ -21,4 +21,4 @@ Gerant.init({
     sequelize
 });
 
-exports.Gerant = Gerant; 
+module.exports = Gerant; 

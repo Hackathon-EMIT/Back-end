@@ -30,4 +30,4 @@ PointSale.init({
     sequelize
 });
 
-exports.PointSale = PointSale ; 
+module.exports = PointSale ; 

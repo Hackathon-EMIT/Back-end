@@ -22,4 +22,5 @@ Produit.init({
     },
 }, { sequelize });
 
-exports.Produit = Produit;
+
+module.exports = Produit;

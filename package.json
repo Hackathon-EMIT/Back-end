@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "imports": {
+    "#ErrType": "./src/ErrorType/index.js",
+    "#Model": "./src/Models/index.js",
+    "#Feat": "./src/Features/index.js",
+    "#Utils/*": "./src/Utils/*.js",
+    "#Utils/test-tools/*": "./src/Utils/test-tools/*.js",
+    "#Utils/routes/*": "./src/Utils/routes/*.js"
+  },
   "scripts": {
     "test": "npm run test",
     "dev": "nodemon ./src/index.js",
@@ -37,9 +45,13 @@
     "http-errors": "^2.0.0",
     "joi": "^17.8.3",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "mariadb": "^3.1.0",
 =======
 >>>>>>> b71d8928a7dea14863ce038cbf652eb827a9b76a
+=======
+    "mariadb": "^3.1.0",
+>>>>>>> b092cf3c3864a3d3ab5ed2a919d0391677ba405f
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.8.0",

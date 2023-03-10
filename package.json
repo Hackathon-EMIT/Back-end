@@ -36,7 +36,10 @@
     "express-urlrewrite": "^2.0.0",
     "http-errors": "^2.0.0",
     "joi": "^17.8.3",
+<<<<<<< HEAD
     "mariadb": "^3.1.0",
+=======
+>>>>>>> b71d8928a7dea14863ce038cbf652eb827a9b76a
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.8.0",

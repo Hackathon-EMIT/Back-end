@@ -1,6 +1,9 @@
 const setupData = require("#Utils/setupData");
 const relationProduitPromo = require('./ProduitPromo');
 
+const relationGerantNotif = require("./GerantNotif");
+const relationProduitFacture = require("./ProduitFacture");
+const relationproduitfournisor = require("./ProduitFournisor");
 
 
 const {
@@ -35,20 +38,32 @@ const {
     await setupData({ uri:__dirname+"/Promo.json", model: Promo });
 
 
-    // await relationProduitFacture(
-    //     "53e9a54c-df5a-470a-bf8f-0d357457a474",
-    //     "53e9a54c-df5a-470a-bf8f-0d357457a984"
-    // );
-    
+
     await relationProduitPromo (
         "53e9a54c-df5a-470a-bf8f-0d357457a474" , 
         "123"
 
     );
 
+
     //await relationEntreModel(
        // id,
         //id
     //);
+    await relationGerantNotif(
+        "53e9a54c-df5a-470a-bf8f-0d357457a984",
+        "53ac94bd-0f3b-448f-9f7a-01904da85054"
+    );
+
+    await relationproduitfournisor(
+        "53e9a54c-df5a-470a-bf8f-0d357c57aa84",
+        "53e9a54c-df5a-470a-bf8f-0d357457a474"
+    )
+
+    await relationProduitFacture(
+        "53e9a54c-df5a-470a-bf8f-0d357457a474",
+        "53e9a54c-df5a-470a-bf8f-0d357457a984"
+    );
+
 
 })();

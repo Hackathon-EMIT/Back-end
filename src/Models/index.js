@@ -11,6 +11,10 @@ Produit.hasOne(Promo, {
 })
 Promo.belongsTo(Produit)
 
+Gerant.hasMany(PointSale , {
+    foreignKey : 'g_id'
+})
+PointSale.belongsTo(Gerant)
 
 
 exports.Achat = Achat;

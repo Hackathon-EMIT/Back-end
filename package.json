@@ -44,33 +44,12 @@
     "express-urlrewrite": "^2.0.0",
     "http-errors": "^2.0.0",
     "joi": "^17.8.3",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     "mariadb": "^3.1.0",
-=======
->>>>>>> b71d8928a7dea14863ce038cbf652eb827a9b76a
-=======
-    "mariadb": "^3.1.0",
->>>>>>> b092cf3c3864a3d3ab5ed2a919d0391677ba405f
-=======
->>>>>>> f5069e7bc5f02694ff327e8e1554e0a51cdafd24
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.8.0",
     "nodemon": "^2.0.21",
     "sequelize": "^6.29.3",
     "sqlite3": "^5.1.4"
-<<<<<<< HEAD
-=======
-  },
-  "imports": {
-    "#ErrType": "./src/ErrorType/index.js",
-    "#Model": "./src/Models/index.js",
-    "#Feat": "./src/Features/index.js",
-    "#Utils/*": "./src/Utils/*.js",
-    "#Utils/test-tools/*": "./src/Utils/test-tools/*.js",
-    "#Utils/routes/*": "./src/Utils/routes/*.js"
->>>>>>> f5069e7bc5f02694ff327e8e1554e0a51cdafd24
   }
 }

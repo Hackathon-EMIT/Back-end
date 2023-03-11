@@ -2,18 +2,19 @@ const { Produit, Promo } = require("../Models");
 
 module.exports = {
     async getListProduct( req, res ){
-        const { code_prod } = req.query;
         let data,err;
 
         try {
             const produitlist = await Produit.findAll({
-                attributes:["code_prod", "prod_name", "prod_type"]
+                attributes:["code_prod", "prod_name", "prod_type","prod_price"],
             });
             data = await produitlist.map(v=>v.toJSON());
         } 
         catch (error) {
             err = error;
-        }
+            console.error(error);       
+        
+    }
 
         res.json({ err,data })
     },
@@ -34,22 +35,25 @@ module.exports = {
 
         catch (error) {
             err = error;
+            console.error(error);
         }
 
         res.json({ err, data })
     },
 
     async delProductById( req, res ){
-        const { code_prod } = req.body;
+        const { code_prod } = req.query;
         let err, data;
 
         try {
-            const delProd = await Produit.deleteProduit({ where : code_prod });
-            data = await delProd.toJSON();
+            const delProd = await Produit.destroy({ where : { code_prod } });
+            data = await delProd;
+
         }
 
         catch (error ){
             err = error;
+            console.error(error);
         }
 
         res.json({ err, data })
@@ -60,12 +64,15 @@ module.exports = {
         let err, data;
 
         try{
-            const getProd = await Produit.findOne({ where : code_prod });
+            const getProd = await Produit.findOne({ 
+                attributes:["code_prod", "prod_name", "price_prod"],
+                where : code_prod });
             data = await getProd.toJSON();
         }
 
         catch(error) {
-            err : error;
+            err = error;
+            console.error(error);
         }
 
         res.json({ err, data })
@@ -85,7 +92,8 @@ module.exports = {
         }
 
         catch(error){
-            err : error;
+            err = error;
+            console.error(error);
         }
 
         res.json({ err, data})

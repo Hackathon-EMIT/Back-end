@@ -1,3 +1,4 @@
 exports.PointVenteCtrl = {
-    GeoLoc: require("./PointVente/GeoLoc.controlers")
+    GeoLoc: require("./PointVente/GeoLoc.controlers"),
+    Stock: require("./PointVente/Stock")
 }

@@ -13,8 +13,6 @@ module.exports = {
             if(onstock.nb_stock == 0){
                 data = "Achat impossible , stock epuise"
             }
-
-
             const achat = await Achat.create({
                 code_prod,
                 qt_achat, 

@@ -20,9 +20,9 @@ module.exports= {
     },
 
     async searchByCli (req,res){
-        const {ClientCliCIN} = req.body;
+        const {cli_CIN} = req.body;
         try{
-            const searchCli = await Facture.findOne({where:{ClientCliCIN}});
+            const searchCli = await Facture.findAll({where:{cli_CIN} , include: ['Client']});
             data = searchCli.toJSON();
 
         }catch(error){

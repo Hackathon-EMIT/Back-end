@@ -10,3 +10,7 @@ exports.PointVenteCtrl = {
 exports.ProduitCtrl = {
     Product: require("./Product.controllers"),
 }
+
+exports.ClientCtrl = {
+    Client: require("./Client.controllers"),
+}

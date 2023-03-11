@@ -44,12 +44,12 @@ module.exports = {
         let err, data;
 
         try {
-            const delProd = await Produit.delete({ where : code_prod });
+            const delProd = await Produit.deleteProduit({ where : code_prod });
             data = await delProd.toJSON();
         }
 
         catch (error ){
-            err: error;
+            err = error;
         }
 
         res.json({ err, data })

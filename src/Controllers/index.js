@@ -1,7 +1,7 @@
 exports.PointVenteCtrl = {
-    GeoLoc: require("./PointVente/GeoLoc.controlers")
+    GeoLoc: require("./PointVente/GeoLoc.controllers")
 },
 
 exports.ProduitCtrl = {
-    Product: require("./Product.controlers")
+    Product: require("./Product.controllers")
 }

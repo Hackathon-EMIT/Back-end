@@ -76,8 +76,14 @@ module.exports = {
 
         try{
             const getProd = await Produit.findOne({ 
-                attributes:["code_prod", "prod_name", "price_prod"],
-                where : code_prod });
+                attributes:[
+                    "code_prod", 
+                    "prod_name", 
+                    "prod_price",
+                    "prod_type"
+                ],
+                where: { code_prod }
+            });
             data = await getProd.toJSON();
         }
 

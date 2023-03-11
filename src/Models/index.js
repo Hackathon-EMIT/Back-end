@@ -25,6 +25,9 @@ Promo.belongsTo(Produit);
 Gerant.hasMany(PointSale);
 PointSale.belongsTo(Gerant);
 
+Client.hasMany(Notif);
+Notif.hasOne(Client);
+
 exports.sequelize = sequelize;
 exports.Facture = Facture;
 exports.Fournisor = Fournisor;

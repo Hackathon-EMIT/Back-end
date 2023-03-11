@@ -113,15 +113,27 @@ module.exports = {
 
     
     async updateById(req,res){
+        let data,err;
         const { prod_name, prod_price, prod_type } = req.body;
         const{ code_prod } = req.params;
         try {
-            const prom = await Promo.create({
-                code_promo,
-                limit_date,
-                prom_prec
-            });
-            data = await prom.toJSON();
+            await Produit.update({
+                prod_price,
+                prod_name,
+                prod_type,
+            },{ where: { code_prod } })
+
+            const updatedProduit = await Produit.findOne({
+                where: { code_prod },
+                attributes:[
+                    "code_prod",
+                    "prod_name",
+                    "prod_price",
+                    "prod_type"
+                ]
+            })
+
+            data = updatedProduit;
         }
 
         catch(error){

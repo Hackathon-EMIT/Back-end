@@ -7,5 +7,6 @@ ProductRoute.post("/add-new-product", Product.addNewProduct);
 ProductRoute.delete("/del-product/by-id", Product.delProductById);
 ProductRoute.post("/get-product/by-id", Product.getProductById);
 ProductRoute.post("/add-promo", Product.addPromo);
+ProductRoute.put("/update-by-id/:code_prod",Product.updateById)
 
 module.exports = ProductRoute;

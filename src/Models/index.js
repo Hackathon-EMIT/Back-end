@@ -19,6 +19,9 @@ Fournisor.hasMany(Produit);
 Produit.belongsToMany(PointSale, { through: Stock });
 PointSale.belongsToMany(Produit, { through: Stock });
 
+Facture.hasOne(Client);
+Client.hasMany(Facture);
+
 Produit.hasOne(Promo);
 Promo.belongsTo(Produit);
 

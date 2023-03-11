@@ -1,6 +1,8 @@
 const setupData = require("#Utils/setupData");
 const relationGerantNotif = require("./GerantNotif");
 const relationproduitfournisor = require("./ProduitFournisor");
+const relationProduitFacture = require("./ProduitFacture");
+const relationProduitPS = require("./ProduitPointsal");
 
 const {
     //Model
@@ -34,6 +36,11 @@ const {
     await setupData({ uri:__dirname+"/Promo.json", model: Promo });
 
 
+    await relationProduitFacture(
+        "53e9a54c-df5a-470a-bf8f-0d357457a474",
+        "53e9a54c-df5a-470a-bf8f-0d357457a984"
+    );
+
     //await relationEntreModel(
        // id,
         //id
@@ -45,6 +52,11 @@ const {
 
     await relationproduitfournisor(
         "53e9a54c-df5a-470a-bf8f-0d357c57aa84",
+        "53e9a54c-df5a-470a-bf8f-0d357457a474"
+    );
+
+    await relationProduitPS(
+        "92fd267d-5446-4f8d-aedd-c345d80c7737",
         "53e9a54c-df5a-470a-bf8f-0d357457a474"
     )
 

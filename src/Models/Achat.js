@@ -5,11 +5,11 @@ const Facture = require("./Facture");
 
 class Achat extends Model{};
 Achat.init({
-    num_fac: {
+    num_fact: {
         type: DataTypes.UUID,
         references: {
             model: Facture,
-            key: "num_fac"
+            key: "num_fact"
         }
     },
     code_prod: {

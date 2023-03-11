@@ -12,6 +12,10 @@ exports.ProduitCtrl = {
 };
 
 exports.PromotionCtrl = {
-    Promotion : require("./Promotion.controlers")
+    Promotion: require("./Promotion.controlers")
 };
+
+exports.SaleStoryCtrl = {
+    SaleStory: require("./SaleStory.contrrollers")
+}
 

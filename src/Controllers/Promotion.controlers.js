@@ -1,7 +1,6 @@
 const {Promo,Produit} = require("#Model");
 const {Op} = require('sequelize')
 
-
 module.exports = {
     async createPromo (req,res){
         let data,err;
@@ -24,8 +23,8 @@ module.exports = {
 
     },
 
-    
-    async listProductWithPromo (req,res){
+
+    async listProductWithPromo (_,res){
         let data,err ; 
         try{
             const produit = await Produit.findAll({
@@ -43,10 +42,11 @@ module.exports = {
             });
                  
             
-        }catch(error){
+        } catch(error){
             err = error
             console.log(error)
         }
+
         res.json({err,data});
-    }
+    },
 }

@@ -1,17 +1,24 @@
 const {PointSale,Produit,Achat,Stock} = require('#Model');
+const { where } = require('sequelize');
 
 module.exports = {
     async doSale(req,res){
-        const {prod_id,qt_achat,mnt_total} = req.body;
+        const {code_prod,qt_achat,prod_price, ps_id} = req.body;
         let data,err;
         try{
-            const onStock = await Stock.findOne({where : {prod_id}});
-            if (!onStock){
-                res.json({msg : "Produit indisponible , Achat impossible"})
+            const ps = await PointSale.findOne({where: {ps_id}}); 
+            const produit = await Produit.findOne({where : {code_prod}})
+            const onstock = await Stock.findOne({where : {ps_id,code_prod}});
+
+            if(onstock.nb_stock == 0){
+                data = "Achat impossible , stock epuise"
             }
-            const achat = await produit.createAchat({
+
+
+            const achat = await Achat.create({
+                code_prod,
                 qt_achat, 
-                mnt_total
+                mnt_total : qt_achat*prod_price
             });
             data = achat.toJson();
         }catch (error) {
@@ -69,5 +76,16 @@ module.exports = {
             console.log(err)
         }
         res.json({err,data});
-    }
+    } 
 }; 
+
+
+
+// const nb_stock = onstock.forEach(element => {
+            //     return element.Stock.nb_stock
+            // });
+            // await ps.countProduits({through:{where:{nb_stock}}});
+            // if ( onstock.nb_stock == 0){
+            //     return err = "Stock epuiser"
+            // }
+            // const produit = await Produit.findOne({where:{prod_id}});

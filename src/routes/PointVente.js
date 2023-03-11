@@ -6,6 +6,8 @@ PointVenteRoute.get("/geo-loc/by-id",GeoLoc.getCoordById);
 PointVenteRoute.get("/geo-loc/list",GeoLoc.getAllCoord);
 PointVenteRoute.get("/geo-loc/from-region",GeoLoc.groupByRegion)
 PointVenteRoute.get("/achat/command-list",Achat.getCommandList);
+PointVenteRoute.post("/achat/do-sale",Achat.doSale);
+
 
 
 module.exports = PointVenteRoute;

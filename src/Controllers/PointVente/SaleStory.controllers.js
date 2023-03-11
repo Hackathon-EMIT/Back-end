@@ -1,23 +1,27 @@
-const { PointSale, Client, Facture } = require("../../Models");
-
+const { PointSale, Client, Produit } = require("../../Models");
+const { Op } = require("sequelize");
 module.exports = {
     async filterByDate( req, res ){
-        const { code_prod } = req.params;
+        const { ps_id,date_min } = req.params;
         let err, data;
-        console.log(code_prod)
-
         try{
-            const fact = await Facture.findAll({
-                include:[{
-                    model: PointSale,
-                    where:{ code_prod:code_prod }
-                }]
-            });
-            data = fact.map((facture) => {
-                const { date_fact } = facture;
-                return { date_fact };
-            });
+            const ps = await PointSale.findOne({
+                where: { ps_id }
+            })
 
+            const facture = await ps.getFactures({
+                where: {
+                    date_fact:{
+                        [Op.gt]: date_min
+                    }
+                },
+                include: [
+                    Client,
+                    Produit
+                ]
+            })
+
+            data = facture?.map(v => v.toJSON());
         } catch(error){
             err = error;
             console.error(error);

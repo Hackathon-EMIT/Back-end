@@ -11,5 +11,12 @@
         "prod_name"  : "Kata",
         "prod_price" : 20000,
         "prod_type" : "Vin Rouge"
+    },
+
+    {
+        "code_prod" : "53e9a52c-df5a-470a-bf00-0d357457a474",
+        "prod_name"  : "tsara vin",
+        "prod_price" : 20000,
+        "prod_type" : "Vin dore"
     }
 ]

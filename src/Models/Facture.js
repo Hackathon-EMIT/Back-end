@@ -1,5 +1,5 @@
 const sequelize  = require('./__sequelize');
-const { DataTypes, Model }  = require("sequelize");
+const { DataTypes, Model, Sequelize }  = require("sequelize");
 
 class Facture extends Model{};
 Facture.init({
@@ -10,11 +10,13 @@ Facture.init({
     },
 
     date_fact:{
-        type:DataTypes.STRING,
+        type:DataTypes.DATE,
+        defaultValue: Sequelize.NOW
     },
 
     mnt_fact:{
         type:DataTypes.BIGINT,
+        defaultValue: 0,
     },
 }, { sequelize })
 

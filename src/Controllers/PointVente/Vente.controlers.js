@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const { PointSale, Produit, Achat, Client } = require('../../Models');
 
 module.exports = {
@@ -51,7 +52,7 @@ module.exports = {
                     qt_achat, 
                     mnt_total 
                 });
-                
+
                 newFacture.mnt_fact += mnt_total;
                 await newFacture.save();
             }
@@ -73,32 +74,64 @@ module.exports = {
         
     },
 
-    async getFactures(req,res){
-        const{code_prod} = req.body;
+    async getFactureById(req,res){
+        const { ps_id, num_fact } = req.params;
+        const { } = req.body;
         let data,err;
         try{
-            const achat = await Achat.findOne({where : {code_prod}});
-            const facture = await achat.getFacture({
-                num_fact,
-                date_fact,
-                mnt_fact
+            const ps = await PointSale.findOne({
+                where: { ps_id }
+            })
+            
+            const facture = await ps.getFactures({
+                where: (num_fact && { num_fact }),
+                include: [
+                    Client,
+                    Produit
+                ]
             });
 
-            data = facture.toJson();
+            data = facture[0]?.toJSON() || {};
 
-        }catch (error){
+        } catch (error){
             err = error
-            console.log(err)
+            console.error(err)
         }
         
         res.json({data,err})
     },
     
+
+    async getFactures(req,res){
+        const { ps_id } = req.params;
+        const { } = req.body;
+        let data,err;
+        try{
+            const ps = await PointSale.findOne({
+                where: { ps_id }
+            })
+            
+            const facture = await ps.getFactures({
+                include: [
+                    Client,
+                    Produit
+                ]
+            });
+
+            data = facture?.map(v => v.toJSON());
+
+        } catch (error){
+            err = error
+            console.error(err)
+        }
+        
+        res.json({data,err})
+    },
+
     async getCommandList(req,res){
         let data , err;
         try{
-            const achat = await Achat.findAll();
-            data = achat
+            
         }catch(error){
             err = error
             console.log(err)

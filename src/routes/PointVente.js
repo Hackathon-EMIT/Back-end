@@ -7,6 +7,8 @@ PointVenteRoute.get("/geo-loc/list",GeoLoc.getAllCoord);
 PointVenteRoute.get("/geo-loc/from-region",GeoLoc.groupByRegion);
 
 PointVenteRoute.post("/vente/:ps_id/do-sale",Vente.doSale);
+PointVenteRoute.get("/vente/:ps_id/get-facture/:num_fact",Vente.getFactureById);
+PointVenteRoute.get("/vente/:ps_id/get-factures",Vente.getFactures);
 
 PointVenteRoute.get("/stock/:ps_id/all-product",Stock.getAllProduct);
 PointVenteRoute.put("/stock/:ps_id/increas-stk",Stock.increasStk);

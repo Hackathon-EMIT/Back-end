@@ -1,15 +1,16 @@
 const sequelize = require('./__sequelize');
-const {DataTypes,Model} = require("sequelize");
+const { DataTypes, Model } = require("sequelize");
 
 class Notif extends Model {};
 Notif.init({
-    notif_id: {
-        type : DataTypes.UUID,
-        primaryKey:true,
+    notif_for:{
+        type: DataTypes.ENUM("ADMIN","CLIENT"),
+        defaultValue: "CLIENT"
     },
-
-    notif_motif:{
-        type:DataTypes.STRING
+    notif_id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey:true,
     },
 
     notif_title:{
@@ -17,11 +18,11 @@ Notif.init({
     },
 
     notif_desc:{
-        type:DataTypes.STRING(10),
+        type:DataTypes.TEXT,
     },
 
     notif_type:{
-        type:DataTypes.ENUM('Rupt', 'Acht'),
+        type:DataTypes.ENUM("RUPT_STOCK"),
     },
 
 }, { sequelize })

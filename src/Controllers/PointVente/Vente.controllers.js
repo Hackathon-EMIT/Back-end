@@ -64,7 +64,8 @@ module.exports = {
                 client,
                 sales_product: saleProduct
             }
-            console.log(factureJson);
+
+            data = factureJson;
         }catch (error) {
             err = error;
             console.error(error)

@@ -15,3 +15,4 @@ exports.ProduitCtrl = {
 exports.PromotionCtrl = {
     Promotion : require("./Promotion.controlers")
 };
+

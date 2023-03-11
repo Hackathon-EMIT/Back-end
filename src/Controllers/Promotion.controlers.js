@@ -41,15 +41,6 @@ module.exports = {
                     }
                 });
                  
-            // const data =  await produit.map((pro) => {
-            //     return{
-            //         prod_name : pro.prod_name,
-            //         prod_price : pro.prod_price ,
-            //         prod_type : pro.prod_type
-            //     }
-            // });
-            // const produit = await Produit.findAll({where:{code_prod}});
-            // const enPromo = await produit.getPromo({where: { limit_date: { [Op.gt]: new Date() } }});
             
         }catch(error){
             err = error

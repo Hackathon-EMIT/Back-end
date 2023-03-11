@@ -1,4 +1,5 @@
-const { PointSale, Produit } = require("../../Models");
+const { PointSale, Produit, Fournisor } = require("../../Models");
+const nodemailer = require("nodemailer")
 
 module.exports = {
     async getAllProduct(req,res){
@@ -83,7 +84,43 @@ module.exports = {
         }
 
         res.json({ data, err })
+    },
+
+
+    async contactFournisor(req,res){
+        const { 
+            code_prod,
+            nbr_needed,
+            date_needed
+        } = req.body;
+
+        const produit = await Produit.findOne({
+            where: { code_prod },
+            include: Fournisor
+        })
+
+        const { prod_name } = produit;
+        const { email_four } = produit.Fournisor;
+        const text = `On a besoin de ${nbr_needed} ${prod_name}
+            pour le ${date_needed}`
+
+        let transp = nodemailer.createTransport({
+            host: "smtp.ethereal.email",
+            port: 587,
+            secure: false, 
+            auth: {
+                user:"aniya.russel1@ethereal.email",
+                pass:"jvCsGGPabEjDrKdnuV",
+            }
+        })
+
+        let msg = await transp.sendMail({
+            from: '"Company de Vin" <winecomp@gmail.com>',
+            to: email_four, 
+            text,
+            subject: "Demande de livraison",
+        });
+
+        res.json({ msg });
     }
-
-
 }

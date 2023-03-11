@@ -21,7 +21,6 @@ Stock.init({
         }
     },
     nb_stock:{
-        defaultValue: 0,
         type: DataTypes.INTEGER
     }
 }, {

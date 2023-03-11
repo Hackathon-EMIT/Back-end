@@ -6,7 +6,8 @@ const relationProduitPS = require("./ProduitPointsal");
 const relationProduitFacture = require("./ProduitFacture");
 const relationproduitfournisor = require("./ProduitFournisor");
 const relationGerantPS = require("./GerantPS");
-const relationClientFacture = require("./ClientFacture");
+const relationFacturePS = require("./FacturePS");
+const relationFactureClient = require("./FactureClient");
 
 const {
     //Model
@@ -81,9 +82,14 @@ const {
         "92fd267d-5446-4f8d-aedd-c345d80c7737"
     );
 
-    await relationClientFacture(
-        "53e9a54c-df5a-470a-bf8f-0d357457a984",
-        "101231334567"
+    await relationFacturePS(
+        "92fd267d-5446-4f8d-aedd-c345d80c7737",
+        "53e9a54c-df5a-470a-bf8f-0d357457a984"
+    );
+
+    await relationFactureClient(
+        "101231334567",
+        "53e9a54c-df5a-470a-bf8f-0d357457a984"
     )
 
 })();

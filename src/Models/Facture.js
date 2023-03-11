@@ -5,6 +5,7 @@ class Facture extends Model{};
 Facture.init({
     num_fact:{
         type:DataTypes.UUID,
+        defaultValue:DataTypes.UUIDV4,
         primaryKey:true,
     },
 

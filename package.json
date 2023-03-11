@@ -12,9 +12,10 @@
     "#Utils/routes/*": "./src/Utils/routes/*.js"
   },
   "scripts": {
-    "test": "npm run test",
-    "dev": "nodemon ./src/index.js",
-    "start": "node ./src/index.js"
+    "test": "jest --watchAll --testTimeout=100000",
+    "serve": "nodemon src/App.js",
+    "setup-data": "node src/SetupData/__setup.js",
+    "create-feat": "node src/Utils/script/addFeatures.js"
   },
   "engines": {
     "node": "^12.19.0 || ^14.15.0 || ^16.13.0"

@@ -5,8 +5,13 @@ exports.PointVenteCtrl = {
     Stock: require("./PointVente/Stock.controllers"),
     Client: require("./PointVente/Client.controllers"),
     SaleStory: require("./PointVente/SaleStory.controllers"),
-},
+};
 
 exports.ProduitCtrl = {
     Product: require("./Product.controllers"),
-}
+};
+
+exports.PromotionCtrl = {
+    Promotion : require("./Promotion.controlers")
+};
+

@@ -28,5 +28,38 @@ module.exports = {
         }
 
         res.json({ err, data })
+    },
+
+
+    async searchByCliName(req,res){
+        const { cli_name_like } = req.query
+        const { ps_id } = req.params;
+        let err, data;
+        try{
+            const searcedClients = await Client.findAll({
+                where: {
+                    cli_name: {
+                        [Op.like]: `%${cli_name_like}%`
+                    }
+                }
+            })
+
+            const allFactures = [];      
+            for (const client of searcedClients) {
+                const factures = await client.getFactures({
+                    include: Produit,
+                    where: { PointSalePsId: ps_id }
+                })
+
+                allFactures.push(...factures);
+            }
+
+            data = allFactures;
+        } catch(error){
+            err = error;
+            console.error(error);
+        }
+
+        res.json({ err, data })
     }
 }

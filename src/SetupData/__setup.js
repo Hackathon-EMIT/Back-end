@@ -1,5 +1,6 @@
 const setupData = require("#Utils/setupData");
 const relationGerantNotif = require("./GerantNotif");
+const relationproduitfournisor = require("./ProduitFournisor");
 
 const {
     //Model
@@ -41,5 +42,10 @@ const {
         "53e9a54c-df5a-470a-bf8f-0d357457a984",
         "53ac94bd-0f3b-448f-9f7a-01904da85054"
     );
-    
+
+    await relationproduitfournisor(
+        "53e9a54c-df5a-470a-bf8f-0d357c57aa84",
+        "53e9a54c-df5a-470a-bf8f-0d357457a474"
+    )
+
 })();

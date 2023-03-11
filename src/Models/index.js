@@ -10,8 +10,8 @@ const Fournisor = require("./Fournisor");
 const Promo = require('./Promo');
 const Stock = require("./Stock");
 
-Produit.belongsToMany(Facture, { through: Achat,constraints: false });
-Facture.belongsToMany(Produit, { through: Achat,constraints: false })
+Produit.belongsToMany(Facture, { through: Achat });
+Facture.belongsToMany(Produit, { through: Achat });
 
 Produit.hasOne(Fournisor);
 Fournisor.hasMany(Produit);
@@ -21,6 +21,9 @@ PointSale.belongsToMany(Produit, { through: Stock });
 
 Facture.hasOne(Client);
 Client.hasMany(Facture);
+
+Facture.hasOne(PointSale);
+PointSale.hasMany(Facture);
 
 Produit.hasOne(Promo);
 Promo.belongsTo(Produit);

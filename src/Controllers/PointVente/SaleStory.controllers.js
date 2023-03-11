@@ -1,7 +1,7 @@
 const { PointSale, Client, Facture } = require("../../Models");
 
 module.exports = {
-    async AlterByDate( req, res ){
+    async FilterByDate( req, res ){
         const { code_prod } = req.params;
         let err, data;
         console.log(code_prod)

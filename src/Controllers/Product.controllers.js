@@ -1,4 +1,4 @@
-const { Produit, Promo } = require("../Models");
+const { Produit, Promo, PointSale } = require("../Models");
 
 module.exports = {
     async getListProduct( req, res ){
@@ -19,17 +19,26 @@ module.exports = {
         res.json({ err,data })
     },
 
+
     async addNewProduct( req, res ){
         const { code_prod, prod_name, prod_price, prod_type } = req.body;
         let data, err;
 
         try {
+            const allPointSales = await PointSale.findAll();
             const newProduit = await Produit.create({
-                code_prod,
                 prod_name,
                 prod_price,
                 prod_type
-            })
+            });
+
+            for(const ps of allPointSales){
+                ps.addProduit(newProduit,{
+                    through: { nb_stock:0 }
+                })
+                await ps.save();
+            }
+
             data = await newProduit.toJSON();
         } 
 
@@ -40,6 +49,7 @@ module.exports = {
 
         res.json({ err, data })
     },
+
 
     async delProductById( req, res ){
         const { code_prod } = req.query;
@@ -58,6 +68,7 @@ module.exports = {
 
         res.json({ err, data })
     },
+
 
     async getProductById( req, res ){
         const { code_prod } = req.params;
@@ -78,10 +89,32 @@ module.exports = {
         res.json({ err, data })
     }, 
 
+
     async addPromo( req, res ){
         const { code_promo, limit_date, prom_prec } = req.body;
         let data, err;
 
+        try {
+            const prom = await Promo.create({
+                code_promo,
+                limit_date,
+                prom_prec
+            });
+            data = await prom.toJSON();
+        }
+
+        catch(error){
+            err = error;
+            console.error(error);
+        }
+
+        res.json({ err, data})
+    },
+
+    
+    async updateById(req,res){
+        const { prod_name, prod_price, prod_type } = req.body;
+        const{ code_prod } = req.params;
         try {
             const prom = await Promo.create({
                 code_promo,

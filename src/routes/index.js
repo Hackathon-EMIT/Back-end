@@ -1,3 +1,3 @@
 const RootRouter = require("express").Router();
-RootRouter.use();
+RootRouter.use("/point-vente",require("./PointVente"));
 module.exports = RootRouter;

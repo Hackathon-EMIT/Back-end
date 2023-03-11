@@ -11,8 +11,10 @@ exports.PointVenteCtrl = {
 exports.ProduitCtrl = {
     Product: require("./Product.controllers"),
     Promotion : require("./Promotion.controlers")
-}
+};
 exports.PromotionCtrl = {
     Promotion : require("./Promotion.controlers")
 };
-
+exports.GerantCtrl = {
+    Gerant : require("./Gerant.controlers")
+};

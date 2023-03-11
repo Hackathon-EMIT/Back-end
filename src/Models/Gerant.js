@@ -14,7 +14,7 @@ Gerant.init({
         allowNull: false
     },
     g_email : {
-        type : DataTypes.BIGINT,
+        type : DataTypes.STRING,
         allowNull: false,
     }
 },{

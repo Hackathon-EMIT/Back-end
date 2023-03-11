@@ -1,9 +1,7 @@
 const PointVenteRoute = require("express").Router();
-const { PointVenteCtrl , PromotionCtrl } = require("../Controllers");
-const { Achat , SaleStory } = PointVenteCtrl ;
-const { Promotion} = PromotionCtrl ;
-
 const { PointVenteCtrl } = require("../Controllers");
+const { Achat , SaleStory } = PointVenteCtrl ;
+
 const { GeoLoc, Stock, Client, Vente } = PointVenteCtrl;
 
 PointVenteRoute.get("/geo-loc/by-id",GeoLoc.getCoordById);
@@ -21,8 +19,6 @@ PointVenteRoute.get("/client/:ps_id/list",Client.getList);
 PointVenteRoute.get("/sale-story/alter-by-date",SaleStory.alterBydate);
 PointVenteRoute.get("/sale-story/search-by-Cli",SaleStory.searchByCli);
 
-PointVenteRoute.post("/promotion/create-promotion",Promotion.createPromo);
-PointVenteRoute.get("/promotion/list-produit-with-promotion",Promotion.listProductWithPromo);
 
 
 

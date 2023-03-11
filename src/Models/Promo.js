@@ -14,6 +14,7 @@ Promo.init({
     },
     prom_perc : {
         type : DataTypes.DOUBLE,
+        defaultValue: 0,
     }
 },{
     sequelize

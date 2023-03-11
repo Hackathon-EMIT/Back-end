@@ -6,7 +6,7 @@ PointSale.init({
     ps_id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
-        primaryKey: true
+        primaryKey: true,
     },
     coord_long: {
         type : DataTypes.STRING,
@@ -23,7 +23,6 @@ PointSale.init({
     adrs_ps : {
         type : DataTypes.BIGINT,
         allowNull: false,
-        primaryKey : true
     },
     ville : {
         type : DataTypes.STRING,

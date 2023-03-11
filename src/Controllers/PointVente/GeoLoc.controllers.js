@@ -35,6 +35,7 @@ module.exports = {
         res.json({ err, data })
     },
 
+    
     async groupByRegion(req,res){
         let data,err;
         

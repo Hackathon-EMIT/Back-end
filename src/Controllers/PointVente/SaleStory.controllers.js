@@ -1,7 +1,7 @@
 const { PointSale, Client, Produit } = require("../../Models");
 const { Op } = require("sequelize");
 module.exports = {
-    async filterByDate( req, res ){
+    async FilterByDate( req, res ){
         const { ps_id,date_min } = req.params;
         let err, data;
         try{

@@ -16,8 +16,7 @@ PointVenteRoute.put("/stock/:ps_id/contact-fourn",Stock.contactFournisor);
 
 PointVenteRoute.get("/client/:ps_id/list",Client.getList);
 
-PointVenteRoute.get("/sale-story/by-id", SaleStory.FilterByDate);
-PointVenteRoute.get("/sale-story/:ps_id/by-date/:date_min", SaleStory.filterByDate);
+PointVenteRoute.get("/sale-story/:ps_id/by-date/:date_min", SaleStory.FilterByDate);
 PointVenteRoute.get("/sale-story/:ps_id/by-name-like", SaleStory.searchByCliName);
 
 module.exports = PointVenteRoute;

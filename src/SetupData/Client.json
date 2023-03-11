@@ -3,5 +3,11 @@
         "cli_name" : "Yossy",
         "cli_fname": "Zaka",
         "cli_CIN" : "101231334567"
+    },
+    {
+        "cli_name" : "Leonce le debugger",
+        "cli_fname": "AJL",
+        "cli_CIN" : "101252159789"
     }
+
 ]

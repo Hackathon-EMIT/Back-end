@@ -21,7 +21,7 @@ module.exports = {
 
 
     async addNewProduct( req, res ){
-        const { code_prod, prod_name, prod_price, prod_type } = req.body;
+        const { prod_name, prod_price, prod_type } = req.body;
         let data, err;
 
         try {

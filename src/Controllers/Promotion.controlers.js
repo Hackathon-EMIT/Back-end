@@ -1,4 +1,4 @@
-const {Promo,Produit} = require("#Model");
+const {Promo,Produit} = require("../Models");
 const {Op} = require('sequelize')
 
 module.exports = {

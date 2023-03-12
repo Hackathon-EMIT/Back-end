@@ -6,3 +6,4 @@ PromoRoute.post("/create-promo",Promotion.createPromo);
 PromoRoute.get("/list-produit-with-promo",Promotion.listProductWithPromo);
 
 module.exports = PromoRoute;
+

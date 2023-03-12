@@ -4,4 +4,5 @@ RootRouter.use("/product",require("./Product"));
 RootRouter.use("/client", require("./Client"));
 RootRouter.use("/promo",require("./Promotion"));
 RootRouter.use("/sale-story",require("./SaleStory"));
+RootRouter.use("/gerant",require("./Gerant"));
 module.exports = RootRouter;
